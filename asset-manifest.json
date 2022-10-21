@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/meal-app/static/css/main.e6c13ad2.css",
-    "main.js": "/meal-app/static/js/main.bf9699a3.js",
+    "main.js": "/meal-app/static/js/main.de668833.js",
     "static/media/logo.jpg": "/meal-app/static/media/logo.dcd08e74c75aaa1b7f9d.jpg",
     "index.html": "/meal-app/index.html",
     "main.e6c13ad2.css.map": "/meal-app/static/css/main.e6c13ad2.css.map",
-    "main.bf9699a3.js.map": "/meal-app/static/js/main.bf9699a3.js.map"
+    "main.de668833.js.map": "/meal-app/static/js/main.de668833.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.bf9699a3.js"
+    "static/js/main.de668833.js"
   ]
 }
