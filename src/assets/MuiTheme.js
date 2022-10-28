@@ -4,7 +4,7 @@ const theme = createTheme({
 
     typography: {
         h1: {
-            fontSize: "calc(3.3em + 3.3vw)"
+            fontSize: "calc(3em + 3vw)"
         },
         h3: {
             fontSize: "calc(2em + 2vw)"
@@ -15,10 +15,20 @@ const theme = createTheme({
         h5: {
             fontSize: "calc(0.5em + 0.8vw)"
         },
-        palette: {
-            primary: "#179117"
+        p: {
+            fontSize: "calc(1em + 1vw)"
+        }
+    },
+
+    palette: {
+        primary: {
+            main: "#FFFFFF"
+        },
+        secondary: {
+            main: "#57C64E"
         }
     }
+
 }
 
 )
