@@ -6,6 +6,9 @@ const theme = createTheme({
         h1: {
             fontSize: "calc(3em + 3vw)"
         },
+        h2: {
+            fontSize: "calc(1.4em + 1.4vw)"
+        },
         h3: {
             fontSize: "calc(2em + 2vw)"
         },
