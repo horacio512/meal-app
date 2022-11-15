@@ -1,5 +1,13 @@
-.getStarted{
+.getStarted {
     text-decoration: none;
     font-size: calc(1.6em + 1.6vw);
     color: #57C64E;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    border-radius: 5%;
+    border: inherit;
+    border-style: inherit;
 }

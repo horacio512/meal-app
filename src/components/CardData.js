@@ -1,16 +1,20 @@
 import { Card, CardContent, CardHeader, CardMedia, Grid, IconButton, Link, ThemeProvider, Typography } from "@mui/material"
 import theme from "../assets/MuiTheme";
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import StarRateIcon from '@mui/icons-material/StarRate';
+import ImageApi from "./ImageApi";
+import Favorites from "./Favorites";
 
 
 
 const CardData = ({ food }) => {
 
 
+
     const dayConfig = (i) => {
         const tested = Object.keys(food);
         return tested[i]
     }
+
 
     return (
 
@@ -26,17 +30,18 @@ const CardData = ({ food }) => {
                             </Grid>
                             {meals.map((meal) => {
                                 const { title, id, readyInMinutes, sourceUrl } = meal
-                                return <Grid xs={12} sm={6} md={3} lg={3} xl={3} item key={id}>
+
+                                return <Grid xs={12} sm={6} md={3} lg={3} xl={3} item key={id} >
                                     <Card sx={{ height: '100%' }} >
                                         <CardHeader action={<IconButton>
-                                            <DeleteOutlineIcon />
+                                            <StarRateIcon onClick={() => { <Favorites title={title} id={id} url={sourceUrl} /> }} />
                                         </IconButton>}
                                             title={title}
                                             subheader={`Preparation Time: ${readyInMinutes} minutes`}
                                         />
 
                                         <CardMedia>
-                                            imagen
+                                            <ImageApi id={id} />
                                         </CardMedia>
                                         <CardContent>
                                             <Link href={sourceUrl} variant="h4" underline="none" color="secondary" target="_blank">Go to recipe!</Link>
@@ -51,7 +56,7 @@ const CardData = ({ food }) => {
                 }
 
             </Grid >
-        </ThemeProvider>
+        </ThemeProvider >
     )
 }
 

@@ -22,7 +22,6 @@ const CardDetail = ({ calories }) => {
                     saturday: data.week.saturday.meals,
                     sunday: data.week.sunday.meals
                 })
-                console.log(data)
             })
 
 
