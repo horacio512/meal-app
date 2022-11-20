@@ -14,17 +14,15 @@ const CardDetail = ({ calories }) => {
             .then((data) => {
                 getFood({
 
-                    monday: data.week.monday.meals,
-                    tuesday: data.week.tuesday.meals,
-                    wednesday: data.week.wednesday.meals,
-                    thursday: data.week.thursday.meals,
-                    friday: data.week.friday.meals,
-                    saturday: data.week.saturday.meals,
-                    sunday: data.week.sunday.meals
+                    monday: data.week.monday.meals
+                    // tuesday: data.week.tuesday.meals,
+                    //wednesday: data.week.wednesday.meals,
+                    //thursday: data.week.thursday.meals,
+                    //friday: data.week.friday.meals,
+                    //saturday: data.week.saturday.meals,
+                    //sunday: data.week.sunday.meals
                 })
             })
-
-
 
             .catch(() => {
                 console.log("error");

@@ -2,12 +2,14 @@ import { Card, CardContent, CardHeader, CardMedia, Grid, IconButton, Link, Theme
 import theme from "../assets/MuiTheme";
 import StarRateIcon from '@mui/icons-material/StarRate';
 import ImageApi from "./ImageApi";
-import Favorites from "./Favorites";
+import { useState } from "react";
+
 
 
 
 const CardData = ({ food }) => {
 
+    const [localFav, setLocalFav] = useState(JSON.parse(localStorage.getItem("favorites")) || [])
 
 
     const dayConfig = (i) => {
@@ -15,7 +17,24 @@ const CardData = ({ food }) => {
         return tested[i]
     }
 
+    const favorites = (idData, sourceUrlData, titleData) => {
 
+        if (isInFav(idData) === false) {
+            const newData = localFav;
+            let data = { id: idData, title: titleData, source: sourceUrlData }
+            newData.push(data)
+
+            setLocalFav(newData)
+            localStorage.setItem("favorites", JSON.stringify(localFav))
+        }
+        else
+            return false
+
+    }
+
+    const isInFav = (id) => {
+        return localFav.some(e => e.id === id)
+    }
     return (
 
         <ThemeProvider theme={theme}>
@@ -33,8 +52,8 @@ const CardData = ({ food }) => {
 
                                 return <Grid xs={12} sm={6} md={3} lg={3} xl={3} item key={id} >
                                     <Card sx={{ height: '100%' }} >
-                                        <CardHeader action={<IconButton>
-                                            <StarRateIcon onClick={() => { <Favorites title={title} id={id} url={sourceUrl} /> }} />
+                                        <CardHeader action={<IconButton onClick={() => { favorites(id, sourceUrl, title) }}>
+                                            <StarRateIcon />
                                         </IconButton>}
                                             title={title}
                                             subheader={`Preparation Time: ${readyInMinutes} minutes`}
