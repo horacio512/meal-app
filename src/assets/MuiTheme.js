@@ -29,6 +29,9 @@ const theme = createTheme({
         },
         secondary: {
             main: "#57C64E"
+        },
+        third:{
+            main:"#000000"
         }
     }
 

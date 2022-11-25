@@ -27,7 +27,7 @@ const HeaderNav = () => {
                             <Link to="/meal-app" ><Button>Home Page</Button></Link>
                         </Grid>
                         <Grid item xs={4} textAlign="center"> 
-                            <Link to="/favorites"><Button>favorites</Button></Link>
+                            <Link to="/favorites"><Button>favorites ♥</Button></Link>
                         </Grid>
 
                     </Grid>
