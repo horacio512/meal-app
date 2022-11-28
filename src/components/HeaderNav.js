@@ -15,7 +15,7 @@ const HeaderNav = () => {
                         <img src={logo} alt="logo" width="100vw" />
                     </Grid>
                     <Grid xs={10} sm={8} item md={8} >
-                        <Typography variant="h1" color="primary" textAlign="center">Daily App</Typography>
+                        <Typography variant="h1" color="primary" textAlign="center" fontFamily="Nerko One">Daily App</Typography>
                     </Grid>
                     <Grid item xs={12} sm={2} md={2} alignSelf="center">
                         <Typography variant="h5" color="primary" textAlign="center">What You Need...But Yummier</Typography>

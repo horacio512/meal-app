@@ -3,24 +3,18 @@ import { useEffect, useState } from "react";
 import theme from "../assets/MuiTheme";
 import CardData from "./CardData";
 
-const CardDetail = ({ calories }) => {
+const CardDetail = ({ calories, day }) => {
 
     const [food, getFood] = useState([]);
-
     const ApiFetch = () => {
 
-        fetch(`https://api.spoonacular.com/mealplanner/generate?apiKey=f844dc0531044aa4842de56cc7dadb74&timeFrame=week&targetCalories=${calories}`)
+        fetch(`https://api.spoonacular.com/mealplanner/generate?apiKey=f844dc0531044aa4842de56cc7dadb74&timeFrame=day&targetCalories=${calories}`)
             .then((response) => response.json())
             .then((data) => {
                 getFood({
+                    dataFood: data.meals,
+                    day: day
 
-                    monday: data.week.monday.meals
-                    // tuesday: data.week.tuesday.meals,
-                    //wednesday: data.week.wednesday.meals,
-                    //thursday: data.week.thursday.meals,
-                    //friday: data.week.friday.meals,
-                    //saturday: data.week.saturday.meals,
-                    //sunday: data.week.sunday.meals
                 })
             })
 

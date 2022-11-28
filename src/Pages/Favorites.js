@@ -39,10 +39,10 @@ const Favorites = () => {
                 {
                     data != null ? (<Grid container justifyContent="center" textAlign="center" mt="3vh">
                         <Grid item xs={6}>
-                            <Typography variant="h2">Recipe</Typography>
+                            <Typography variant="h2" fontFamily="Nerko One">Recipe</Typography>
                         </Grid>
                         <Grid item xs={6}>
-                            <Typography variant="h2">Link</Typography>
+                            <Typography variant="h2" fontFamily="Nerko One">Link</Typography>
                             <ArrowDownwardSharpIcon color="error" />
                         </Grid>
                     </Grid>) : (<></>)
@@ -56,16 +56,16 @@ const Favorites = () => {
 
                         data.map((favQuantity) => {
                             const { id, source, title } = favQuantity
-                            return <Grid container xs={12} key={id} mt="4vh" textAlign="center" p="1vw" display="flex" sx={{ border: 1, borderRadius: "12%" }} alignItems="center">
-                                <Grid item xs={7}>
+                            return <Grid container key={id} mt="4vh" textAlign="center" p="1vw" display="flex" sx={{ border: 1, borderRadius: "6%" }} alignItems="center">
+                                <Grid item xs={6} md={7}>
                                     <Typography variant="h5">
                                         {title}
                                     </Typography>
                                 </Grid>
-                                <Grid item xs={4}>
+                                <Grid item xs={4} md={4}>
                                     <Link href={source} variant="h5" underline="none" color="secondary" target="_blank">Go to recipe!</Link>
                                 </Grid>
-                                <Grid item xs={1}>
+                                <Grid item xs={2} md={1} justifySelf="start">
                                     <Button color="third" onClick={() => deleteItem(id)}><DeleteRoundedIcon /></Button>
                                 </Grid>
 

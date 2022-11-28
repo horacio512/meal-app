@@ -1,4 +1,4 @@
-import { Button, Grid, ThemeProvider, Typography } from "@mui/material"
+import { Grid, ThemeProvider, Typography } from "@mui/material"
 import { Container } from "@mui/system"
 import { Link } from "react-router-dom"
 import theme from "../assets/MuiTheme"
@@ -16,7 +16,7 @@ const Home = () => {
                         </Typography>
                     </Grid>
                     <Grid item xs={12}>
-                        <Typography variant="h4" mt="2vh"textAlign="center">
+                        <Typography variant="h4" mt="2vh" textAlign="center">
                             Here you can plan the meals for you whole week!
                         </Typography>
                     </Grid>
