@@ -9,10 +9,14 @@ const CardData = ({ food }) => {
 
     const day = food.dataFood
 
+    //guarda en el state desde local storage favorites de no existir crea un array vacio
     const [localFav, setLocalFav] = useState(JSON.parse(localStorage.getItem("favorites")) || [])
+    //state para manejar el cuadro de favorites
     const [favColor, setFavColor] = useState([]);
 
-    const favorites = (idData, sourceUrlData, titleData, index) => {
+
+    //función que guarda en localstorage la información de la comida preferida
+    const favorites = (idData, sourceUrlData, titleData) => {
         if (isInFav(idData) === false) {
             const newData = localFav
             let data = { id: idData, title: titleData, source: sourceUrlData }
@@ -28,6 +32,7 @@ const CardData = ({ food }) => {
             return false
     }
 
+//funcion que ayuda para que chequear que no haya duplicados
     const isInFav = (id) => {
         return localFav.some(e => e.id === id)
     }

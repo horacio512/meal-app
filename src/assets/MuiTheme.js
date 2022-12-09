@@ -16,7 +16,7 @@ const theme = createTheme({
             fontSize: "calc(0.8em + 0.8vw)"
         },
         h5: {
-            fontSize: "calc(0.5em + 0.8vw)"
+            fontSize: "calc(0.6em + 0.8vw)"
         },
         p: {
             fontSize: "calc(1em + 1vw)"
@@ -30,11 +30,14 @@ const theme = createTheme({
         secondary: {
             main: "#57C64E"
         },
-        third:{
-            main:"#000000"
+        third: {
+            main: "#1F5604"
+        },
+        fourth: {
+            main: "#ad0707"
         }
     }
-
+   
 }
 
 )

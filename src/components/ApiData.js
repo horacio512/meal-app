@@ -3,10 +3,13 @@ import { useEffect, useState } from "react";
 import theme from "../assets/MuiTheme";
 import CardData from "./CardData";
 
-const CardDetail = ({ calories, day }) => {
+const ApiData = ({ calories, day }) => {
 
     const [food, getFood] = useState([]);
-    const ApiFetch = () => {
+
+
+//Fetch de la información sobre los alimentos recibiendo las calorias ingresadas y el dia seleccionado
+    useEffect(() => {
 
         fetch(`https://api.spoonacular.com/mealplanner/generate?apiKey=f844dc0531044aa4842de56cc7dadb74&timeFrame=day&targetCalories=${calories}`)
             .then((response) => response.json())
@@ -21,12 +24,8 @@ const CardDetail = ({ calories, day }) => {
             .catch(() => {
                 console.log("error");
             })
-    }
 
-    useEffect(() => {
-        ApiFetch();
-
-    }, [])
+    }, [day,calories])
 
     return (
         <ThemeProvider theme={theme} >
@@ -35,4 +34,4 @@ const CardDetail = ({ calories, day }) => {
     )
 }
 
-export default CardDetail;
+export default ApiData;

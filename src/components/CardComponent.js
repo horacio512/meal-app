@@ -1,24 +1,29 @@
 import { Button, Grid, Typography, ThemeProvider, TextField } from "@mui/material";
 import { useState } from "react";
 import theme from "../assets/MuiTheme";
-import CardDetail from "./CardDetail";
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import ApiData from "./ApiData";
 
 const CardComponent = () => {
 
+//state que maneja las calorias ingresadas por default 2000 diarias
     const [calories, setCalories] = useState(2000);
+//state que maneja el dia de la semana por default Monday/Lunes
     const [day, setDay] = useState("Monday")
+//state que maneja la vista de la página en true muestra la selección de calorias y dia, en false ejecuta ApiData para hacer fetch de la API
     const [show, setShow] = useState(true);
 
+
+//submit para guardar los datos de las calorias ingresadas en el state
     const handleSubmit = (e) => {
         setCalories(e.target.value)
-
     }
 
+//guarda el dia seleccionado en el state
     const handleChange = (e) => {
         setDay(e.target.value)
     }
@@ -53,14 +58,14 @@ const CardComponent = () => {
                     <Typography variant="h4">Select your daily calories to get Started!</Typography>
                 </Grid>
                 <Grid item xs={12} display="flex" justifyContent="center" pt="2vh">
-                    <TextField onChange={handleSubmit} label="Type your Daily Calories!" inputProps={{ type: 'number', inputMode: 'numeric', pattern: '[0-9]*' }} required />
+                    <TextField onChange={handleSubmit} label="Default 2000 calories" inputProps={{ type: 'number', inputMode: 'numeric', pattern: '[0-9]*' }} required />
                 </Grid>
                 <Grid item xs={12} textAlign="center" >
                     <Button color="secondary" onClick={() => { setShow(false) }} >GET STARTED!</Button>
                 </Grid>
 
 
-            </Grid> : <CardDetail calories={calories} day={day} />}
+            </Grid> : <ApiData calories={calories} day={day} />}
 
         </ThemeProvider>
     )

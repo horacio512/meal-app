@@ -1,5 +1,4 @@
 import { Grid, ThemeProvider, Typography } from "@mui/material"
-import { Container } from "@mui/system"
 import { Link } from "react-router-dom"
 import theme from "../assets/MuiTheme"
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
@@ -8,24 +7,23 @@ import "../assets/styles.css"
 const Home = () => {
     return (
         <ThemeProvider theme={theme}>
-            <Container>
-                <Grid container pt="3vh">
-                    <Grid item xs={12}>
-                        <Typography variant="h3" mt="2vh" textAlign="center">
+                <Grid container color="black">
+                    <Grid item xs={12} pt={{xs: "25%",sm: "15%" , md: "10%"}} >
+                        <Typography variant="h3" textAlign="center">
                             Welcome to Daily App!
                         </Typography>
                     </Grid>
                     <Grid item xs={12}>
-                        <Typography variant="h4" mt="2vh" textAlign="center">
+                        <Typography variant="h4" textAlign="center">
                             Here you can plan the meals for you whole week!
                         </Typography>
                     </Grid>
                     <Grid item xs={12}>
-                        <Typography variant="h4" mt="2vh" textAlign="center">
+                        <Typography variant="h4" textAlign="center">
                             Click Below To Coninue
                         </Typography>
                     </Grid>
-                    <Grid item xs={12} textAlign="center" pt="4vh">
+                    <Grid item xs={12} textAlign="center">
                         <Link className="getStarted" to="/get-Started">Get Started</Link>
                     </Grid>
                     <Grid item xs={12} textAlign="center">
@@ -33,7 +31,7 @@ const Home = () => {
                     </Grid>
 
                 </Grid>
-            </Container>
+   
         </ThemeProvider>
     )
 }

@@ -1,8 +1,12 @@
+
+/*Estilod boton Get Started /Home/  */
 .getStarted {
     text-decoration: none;
     font-size: calc(1.6em + 1.6vw);
     color: #57C64E;
 }
+
+
 
 .image {
     width: 100%;
@@ -10,4 +14,15 @@
     border-radius: 5%;
     border: inherit;
     border-style: inherit;
+}
+
+/*Estilo de Imagen de fondo */
+.background {
+    background: url("../assets/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+
+
 }
